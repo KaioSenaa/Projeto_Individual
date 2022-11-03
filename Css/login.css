@@ -2,22 +2,30 @@
     padding: 0;
     margin: 0;
 }
-.banner2{
-    background-color: blue;
-    
+body{
+    background-image: url("https://images5.alphacoders.com/715/715035.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .conteinerlogin{
-    
+    padding: 5%;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    
 }
 .campos{
-    
+    padding: 10% 0;
     display: flex;
-    margin-bottom: 20px;
+    width: 30%;
+    height: 30%;
+    border-radius: 5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.675);
+    color: aliceblue;
 }

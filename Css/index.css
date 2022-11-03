@@ -17,8 +17,8 @@ body{
     display: flex;
     padding: 1rem ;
     justify-content: space-between;
-    border-bottom: 3px solid #0051ff;
-    background-image: linear-gradient(45deg,#FF4500 0%,#4169E1);
+    border-bottom: 0.2rem solid #f2f6fa;
+    background-image: linear-gradient(45deg,#554e9a 70%,#b8baea);
     color: white;
     
 }
@@ -44,7 +44,7 @@ li{
     display: flex;
     flex-direction: row;
     display: inline-block;
-    margin: 10px;
+    margin: 10%;
 }
 
 .botao {
@@ -52,7 +52,6 @@ li{
     justify-content: space-around;
     width: 12%;
     white-space: nowrap;
-    
 }
 
 .Login, .SignUp{
@@ -60,17 +59,18 @@ li{
     height: 4vh;
     border-radius: 10px;
     border: 2px solid rgb(25, 25, 25);
+    
 }
 /* FINAL DA ESTILIZAÇÃO HEADER/NAVBAR */
 
 /* ESTILIZAÇÃO DO MENU */
 .banner{
-    padding: 150px 0;
+    padding: 10% 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(45deg,#FF4500 0%,#4169E1);
+    background-image: linear-gradient( #554e9a,#554e9a);
 }
 
 .banner .container{
@@ -85,50 +85,47 @@ li{
     font-size: 35px;
     width: 80%;
 }
-/* .caixa, .caixas, .caixa1{
+ .caixa, .caixas, .caixa1{
     display:flex ;
+}
+.caixas{
+    background-image: linear-gradient(#554e9a,#b8baea);
 }
 
 .caixas{
-    margin: 50px 0;
+    margin: 0% 0;
 }
 
 .caixa1{
+    padding: 1%;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 0px;
-    margin: 3px solid blue;
-} */
-
- .caixas{
-    padding: 30px 0;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: space-around;
+    margin: 7%;
+    
 }
 
-.caixas .containerCaixas{
+.caixa1 img{
+    width: 300px;
+    height: 300px;
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    border-radius: 10px
+}
+#arma{
+    box-shadow: none;
+}
+
+.caixa1 .botaoCaixa{
     display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+.caixa1 h2{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
 }
 
-.caixas .caixa{
-    padding: 40px;
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.caixa .caixa1{
-    padding: 40px;
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-     
-} 
+ 
 

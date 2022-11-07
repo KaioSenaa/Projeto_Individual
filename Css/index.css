@@ -1,4 +1,14 @@
-*{
+@keyframes animacao {
+    from {
+        background-color: blueviolet;
+    }
+
+    to {
+        background-color: darkmagenta;
+    }
+}
+
+* {
     padding: 0;
     margin: 0;
 }
@@ -8,31 +18,34 @@ a {
     height: 0;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-
+    background-image: url(https://games.mxdwn.com/wp-content/uploads/2021/07/csgo-skin-contest.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 /* ESTILIZAÇÃO DO HEADER/NAVBAR */
-.header{
+.header {
     display: flex;
-    padding: 1rem ;
+    padding: 1rem;
     justify-content: space-between;
     border-bottom: 0.2rem solid #f2f6fa;
-    background-image: linear-gradient(45deg,#554e9a 70%,#b8baea);
     color: white;
-    
+
 }
-.icone h1{
+
+.icone h1 {
     color: #173ede;
-    }
-    
-.navbar{
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-ul{
+ul {
     display: flex;
     list-style: none;
     width: 45%;
@@ -40,7 +53,7 @@ ul{
     white-space: nowrap;
 }
 
-li{
+li {
     display: flex;
     flex-direction: row;
     display: inline-block;
@@ -54,78 +67,97 @@ li{
     white-space: nowrap;
 }
 
-.Login, .SignUp{
+.SignUp:hover{
+    transition: 1s;
+    opacity: 0.8;
+    background-color: #4169E1;
+}
+
+.Login:hover{
+    transition: 1s;
+    opacity: 0.8;
+    background-color: #4169E1;
+}
+
+.Login,.SignUp {
     width: 5vw;
     height: 4vh;
     border-radius: 10px;
     border: 2px solid rgb(25, 25, 25);
-    
+    transition: 1s;
+    cursor: pointer;
 }
+
 /* FINAL DA ESTILIZAÇÃO HEADER/NAVBAR */
 
 /* ESTILIZAÇÃO DO MENU */
 .banner{
-    padding: 10% 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-image: linear-gradient( #554e9a,#554e9a);
-}
-
-.banner .container{
-    color: rgb(0, 0, 0);
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container p{
-    font-size: 35px;
-    width: 80%;
-}
- .caixa, .caixas, .caixa1{
-    display:flex ;
-}
-.caixas{
-    background-image: linear-gradient(#554e9a,#b8baea);
-}
-
-.caixas{
-    margin: 0% 0;
-}
-
-.caixa1{
-    padding: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: space-around;
-    margin: 7%;
-    
-}
-
-.caixa1 img{
-    width: 300px;
-    height: 300px;
-    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-    border-radius: 10px
-}
-#arma{
-    box-shadow: none;
-}
-
-.caixa1 .botaoCaixa{
-    display: flex;
-    flex-direction: column;
     padding: 10%;
+    
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    
+
 }
-.caixa1 h2{
+
+
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: rgba(50, 50, 50, 0.77);
 }
 
- 
+.container h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
+
+
+.container-card{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    height: 35vw;
+    border-radius: 5%;
+    margin-top: 5%;
+    background-color: #6c6a6a2d;
+    color: azure;
+    overflow: hidden;
+
+}
+.card-img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77) ;
+}
+
+.card-img2{
+    width: 100%;
+    height: 55%;
+    border-radius: 15px;
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77) ;
+}
+
+.card-img3{
+    width: 100%;
+    height: 55%;
+    border-radius: 15px;
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77) ;
+}
+
+.titulo-card{
+    text-align: center;
+    justify-content: center;
+}
+.descricao-card{
+    text-align: center;
+}

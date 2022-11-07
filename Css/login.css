@@ -52,6 +52,7 @@ body{
     padding: 5%;
     border-radius: 10px;
     border: 2px solid blue;
+    outline: none;
 
 }
 .campos button{

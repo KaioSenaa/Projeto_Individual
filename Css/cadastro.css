@@ -58,6 +58,7 @@ select{
     width: 83%;
     border-radius: 2vh;
     outline: none;
+    box-shadow: none;
 }
 
 .inputs input{

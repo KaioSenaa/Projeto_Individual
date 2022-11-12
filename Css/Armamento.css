@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-
+/* Menu */
 .navbar ul li a{
     text-decoration: none;
     color: azure;
@@ -12,48 +12,47 @@
     transition: 1s;
     color:#4169E1;
 }
-/* Sub-Menu */
-
-.navbar ul ul{
-    display: none;
-    position: absolute;   
-}
-
-.navbar ul ul{
-    width: 10%;
-}
-
-.navbar ul li:hover ul{
-    display: block;    
-}
-
-.navbar ul ul li a{
-    display:block;
-}
-/* Fim Sub-Menu */
-
-/* Corpo */
-
-.container{
+/* Fim Menu */
+.container-armamento{
     display: flex;
-    justify-content: space-between;
-
-
-}
-.imgs{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 50%;
-    
-    
-}
-.texto{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 0;
+    margin: 5%;
+    justify-content: center;
     align-items: center;
+}
+
+.descricao{
+    padding: 0%;
+    background-color: rgba(0, 0, 0, 0.675);
+    width: 80%;
+    border-radius: 3vh;
+    color: azure;
+}
+
+.descricao p{
+    padding: 5%;
+    font-size: 20px;
+}
+
+.descricao h2{
+    text-decoration: none;
+    color: azure;
+    text-align: center;
+    padding: 5%;
+    outline: none;
+}
+
+.descricao img{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgs-armamento{
+    display: flex;
+    margin: 5%;
+    border: #4169E1 solid;
+}
     
-}
-.texto h2{
-}
+

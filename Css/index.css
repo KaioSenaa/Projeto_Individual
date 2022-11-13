@@ -45,7 +45,7 @@ body {
     justify-content: center;
 }
 
-ul {
+.navbar ul{
     display: flex;
     list-style: none;
     width: 45%;
@@ -53,7 +53,7 @@ ul {
     white-space: nowrap;
 }
 
-li {
+.navbar li {
     display: flex;
     flex-direction: row;
     display: inline-block;

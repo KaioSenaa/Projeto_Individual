@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 body{
     padding: 0;
@@ -24,6 +23,7 @@ body{
     margin: 4%;
     justify-content: center;
     align-items: center;
+    
 }
 
 .descricao{
@@ -58,6 +58,7 @@ body{
     display: flex;
     position: relative;
     margin: 5%;
+    
     /* border: #4169E1 solid; */
     
 }

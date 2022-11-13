@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.navbar ul li a{
+    text-decoration: none;
+    color: azure;
+}
+
+.navbar ul li a:hover{
+    transition: 1s;
+    color:#4169E1;
+}
+
+/* Fim Header */

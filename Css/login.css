@@ -53,6 +53,8 @@ body{
     border-radius: 10px;
     border: 2px solid blue;
     outline: none;
+    width: 110%;
+    
 
 }
 .campos button{

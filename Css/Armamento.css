@@ -1,6 +1,11 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
 }
 /* Menu */
 .navbar ul li a{
@@ -15,8 +20,8 @@
 /* Fim Menu */
 .container-armamento{
     display: flex;
-    padding: 0;
-    margin: 5%;
+    padding: 2%;
+    margin: 4%;
     justify-content: center;
     align-items: center;
 }
@@ -30,7 +35,7 @@
 }
 
 .descricao p{
-    padding: 5%;
+    padding:2%;
     font-size: 20px;
 }
 
@@ -51,8 +56,37 @@
 
 .imgs-armamento{
     display: flex;
+    position: relative;
     margin: 5%;
-    border: #4169E1 solid;
+    /* border: #4169E1 solid; */
+    
+}
+
+.imgs-armamento::before, .imgs-armamento::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);;
+    background: linear-gradient(45deg, #151b27,#4169E1);
+    background-size: 300%;
+    border-radius: 3vh;
+    animation: animar 5s linear infinite ;
+}
+
+
+@keyframes animar {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 300%;
+    }
+}
+
+
+.imgs-armamento::after{
+    filter: blur(10%);
 }
     
 

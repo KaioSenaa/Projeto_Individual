@@ -8,6 +8,7 @@ body {
     background-image: url(https://csgo-bets.org/wp-content/uploads/2020/10/csgo-csgo-wallpaper-2019.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow: hidden;
 }
 

@@ -6,7 +6,8 @@
 body{
     background-image: url(https://i.pinimg.com/originals/ff/c3/8d/ffc38d9bce22d7a9eaa07b890e3af1a2.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Header */

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Ranking.css">
 
     <title>Document</title>
 </head>
@@ -37,9 +38,11 @@
     <!-- Gráficos -->
     <div class="graficos">
         <div class="chart">
+            <H2>RANKING ARMAMENTOS</H2>
             <canvas id="myChart"></canvas>
         </div>
         <div class="chart">
+           <H2>RANKING MAPAS</H2> 
             <canvas id="myChart2"></canvas>
         </div>
     </div>
@@ -47,52 +50,40 @@
 </body>
 <script>
     const labels = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
+        'AK-47',
+        'M4A4',
+        'M4A1-S',
+        'AUG',
+        'SG 553',
+        'AWP',
     ];
 
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Temperatura',
+            label: 'Armamentos',
             backgroundColor: 'rgb(255, 0, 0)',
             borderColor: 'rgb(255, 0, 0)',
             data: [30, 29, 28, 25, 22, 23],
         },
-        {
-            label: 'Umidade',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [80, 82, 80, 85, 80, 83],
-        },
         ]
     };
     const labels1 = [
-        'Janeiro',
-        'Fevereiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
+        'Mirage',
+        'Vertigo',
+        'Train',
+        'Inferno',
+        'Dust2',
+        'Nuke',
     ];
 
     const data2 = {
         labels: labels1,
         datasets: [{
-            label: 'Temperatura Mínima',
-            backgroundColor: 'rgb(255, 0, 0)',
-            borderColor: 'rgb(255, 0, 0)',
-            data: [22, 24, 27, 23, 20, 18],
-        },
-        {
-            label: 'Umidade Média',
+            label: 'Mapas',
             backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0,255)',
-            data: [90, 89, 93, 87, 88, 82],
+            borderColor: 'rgb(0, 0, 255)',
+            data: [22, 24, 27, 23, 20, 18],
         },
         ]
 

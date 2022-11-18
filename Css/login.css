@@ -17,6 +17,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    ;
     
     
 }
@@ -30,6 +31,7 @@ body{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.675);
     color: aliceblue;
+    box-shadow: 1px 1px 10px #4169E1
 }
 
 .campos h2{

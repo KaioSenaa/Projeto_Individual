@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/Sorteio.css">
+    <title>Sorteio</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="icone">
+            <a href="index.html">
+                <h1>CSGO - WIKI</h1>
+            </a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="Modos.html">Modos</a></li>
+                <li>|</li>
+                <li><a href="Armamento.html">Armamentos</a></li>
+                <li>|</li>
+                <li><a href="Ranking.html">Ranking</a></li>
+                <li>|</li>
+                <li><a href="Mapas.html">Mapas</a></li>
+                <li>|</li>
+                <li><a href="Sorteio.html">Sorteio</a></li>
+            </ul>
+        </div>
+        <div class="botao">
+            <a href="login.html"><button onclick="entrar()" class="Login">Entrar</button></a>
+            <a href="Cadastro.html"><button onclick="cadastrar()" class="SignUp">Cadastrar</button></a>
+        </div>
+    </div>
+    <!-- Corpo -->
+    <div class="contorno-sorteio">
+        <div class="container-sorteio">
+            <div class="sorteio-arma">
+                <div class="label-sorteio">
+                    <label for="">Digite o nome da skin</label><br>
+                </div>
+                <div class="campo-sorteio">
+                    <input type="text" id="in_nome_sorteio">
+                </div>
+                <div class="botao-sorteio">
+                    <button onclick="pesquisar()">Pesquisar</button>
+                </div>
+            </div>
+            <div class="mostrar-sorteio">
+                <div id="frase_sorteio"></div><br>
+                <div id="img_sorteio"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var skins = ['dragon lore', 'Dragon Lore', 'Howl', 'howl','Case Hardened' ,'case hardened', 'gungnir', 'Gungnir', 'lore', 'Lore', 'crimson web' ,'Crimson Web', 'medusa', 'Medusa']
+
+    function pesquisar() {
+        var skin = in_nome_sorteio.value
+        var frase = `A imagem da ${skin} irá aparecer logo abaixo`
+        frase_sorteio.innerHTML = ``
+        img_sorteio.innerHTML = ``
+        if(skin == ""){
+            alert(`Por favor, digite o nome de uma skin`)
+        }
+        for (let index = 0; index < skins.length && skin != ""; index++) {
+            const skinss = skins[index];
+            if (skin == skins[0] || skin == skins[1]) {
+                frase_sorteio.innerHTML = `${frase}<br>`
+                img_sorteio.innerHTML = `<img src="img/Dragon Lore.png" alt="";>`
+            }
+            else if (skin == skins[2] || skin == skins[3]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/M4A4 Howl.png" alt="";>`
+            }
+            else if (skin == skins[4] || skin == skins[5]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/ak-47 Case Hardened.webp" alt="";>`
+            }
+            else if (skin == skins[6] || skin == skins[7]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/Awp Gungnir.jfif" alt="";>`
+            }
+            else if (skin == skins[8] || skin == skins[9]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/Karambit Lore.jfif" alt="";>`
+            }
+            else if (skin == skins[10] || skin == skins[11]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/M9 Bayonet Crimson Web.png" alt="";>`
+            }
+
+            else if (skin == skins[12] || skin == [13]) {
+                img_sorteio.innerHTML = `${frase}<img src="img/Awp Medusa.jfif" alt="";>`
+            }
+            else if(skin != skins){
+                frase_sorteio.innerHTML = `Não foi possível achar esta skin, as skins disponíveis são: dragon lore, howl, case hardened, Gungnir, Lore, Crimson Web e Medusa `
+            }
+        }
+    }
+</script>

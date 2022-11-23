@@ -22,15 +22,13 @@ idUsuario int primary key auto_increment,
 Nome varchar(45) not null,
 Email varchar(90) not null, 
 Senha varchar(45) not null,
-ConfirmarSenha varchar(45) not null,
 constraint chkemail check (Email like '%@%'),
 fkArmamento int, foreign key (fkArmamento) references Armamento(idArmamento)
 );
 
 create table Mapa(
 idMapa int primary key auto_increment,
-NomeMapa varchar(45),
-fkUsuario int, foreign key (fkUsuario) references usuario(idUsuario)
+NomeMapa varchar(45)
 );
 
 Create table MapaCadastro( 
@@ -38,6 +36,28 @@ fkUsuario int, foreign key (fkUsuario) references Usuario(idUsuario),
 fkMapa int, foreign key (fkMapa) references Mapa(idMapa),
 primary key (fkUsuario, fkMapa)
 );
+
+select * from usuario;
+select * from mapaCadastro;
+
+
+insert into Mapa values
+(1, 'Dust2'),
+(2, 'Inferno'),
+(3, 'Mirage'),
+(4, 'Train'),
+(5, 'Nuke'),
+(6, 'Overpass'),
+(7, 'Vertigo');
+
+insert into armamento values
+(1, 'AK-47'),
+(2, 'M4A4'),
+(3, 'M4A1-S'),
+(4, 'AUG'),
+(5, 'AWP'),
+(6, 'SG553');
+
 
 /*
 comando para sql server - banco remoto - ambiente de produção

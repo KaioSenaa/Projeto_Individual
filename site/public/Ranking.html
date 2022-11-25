@@ -44,75 +44,136 @@
             <H2>RANKING ARMAMENTOS</H2>
             <canvas id="myChart"></canvas>
         </div>
-        <div class="chart">
-           <H2>RANKING MAPAS</H2> 
-            <canvas id="myChart2"></canvas>
-        </div>
-    </div>
 
 </body>
 <script>
-    const labels = [
-        'AK-47',
-        'M4A4',
-        'M4A1-S',
-        'AUG',
-        'SG 553',
-        'AWP',
-    ];
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Armamentos',
-            backgroundColor: 'rgb(255, 0, 0)',
-            borderColor: 'rgb(255, 0, 0)',
-            data: [30, 29, 28, 25, 22, 23],
-        },
-        ]
-    };
-    const labels1 = [
-        'Mirage',
-        'Vertigo',
-        'Train',
-        'Inferno',
-        'Dust2',
-        'Nuke',
-    ];
 
-    const data2 = {
-        labels: labels1,
-        datasets: [{
-            label: 'Mapas',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [22, 24, 27, 23, 20, 18],
-        },
-        ]
+    let proximaAtualizacao;
 
-    };
+    window.onload = obterDadosGrafico(1);
 
-    const config = {
+    function alterarTitulo(fkArmamento) {
+        var fkArmamento = document.getElementById("tituloarmamento")
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(fkArmamento) {
+        alterarTitulo(fkArmamento)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${fkArmamento}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, fkArmamento);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        const dados = {
+            labels: ['AK-47',
+            'M4A4',
+            'M4A1-S',
+            'AUG',
+            'SG 553',
+            'AWP'],
+            datasets: [{
+                label: 'Votos',
+                data: [],
+                backgroundColor: [
+                    'rgba(58, 204, 186, 3)',
+
+                    'rgba(67, 108, 106, 3)',
+
+                    'rgba(35, 67, 51, 3)',
+
+                ],
+                borderColor: [
+                    'rgba(58, 204, 186, 1)',
+                    'rgba(67, 108, 106, 1)',
+                    'rgba(35, 67, 51, 1)',
+
+                ],
+
+
+                borderWidth: 1
+            }]
+
+
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.Armamento);
+            dados.datasets[0].data.push(registro.Votos);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
         type: 'bar',
-        data: data,
+        data: dados,
         options: {}
     };
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
-</script>
-<script>
-    const myChart = new Chart(
+
+        // Adicionando gráfico criado em div na tela
+        const myChart = new Chart(
         document.getElementById('myChart'),
         config
     );
 
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
+
+    }
+
+
+    
+    
 </script>
+
 
 </html>

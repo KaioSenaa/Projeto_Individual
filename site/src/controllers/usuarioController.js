@@ -66,8 +66,6 @@ function cadastrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var fkArmamento = req.body.rifleServer;
-    var mapa = req.body.mapaServer;
-    var mapa2 = req.body.mapa2Server
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -78,15 +76,11 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (fkArmamento == undefined) {
         res.status(400).send("Seu armamento está undefined!");
-    } else if (mapa == undefined) {
-        res.status(400).send("Seu mapa está undefined!");
-    } else if (mapa2 == undefined) {
-        res.status(400).send("Seu segundo mapa está undefined!");
     } 
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, fkArmamento, mapa, mapa2)
+        usuarioModel.cadastrar(nome, email, senha, fkArmamento)
             .then(
                 function (resultado) {
                     res.json(resultado);

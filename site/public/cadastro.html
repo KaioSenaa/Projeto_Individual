@@ -48,34 +48,6 @@
                         <input type="password" placeholder="**********" id="confirmacao_senha_input">
                     </div>
 
-                    <label for="">Mapa favorito</label>
-                    <div class="selects">
-                        <select id="sel_mapa">
-                            <option value="">Selecione um mapa</option>
-                            <option value="1">Dust2</option>
-                            <option value="2">Inferno</option>
-                            <option value="3">Mirage</option>
-                            <option value="4">Train</option>
-                            <option value="5">Nuke</option>
-                            <option value="6">Overpass</option>
-                            <option value="7">Vertigo</option>
-                        </select><br>
-                    </div>
-
-                    <label for="">Segundo Mapa favorito</label>
-                    <div class="selects">
-                        <select id="sel_mapa2">
-                            <option value="">Selecione mais um mapa</option>
-                            <option value="1">Dust2</option>
-                            <option value="2">Inferno</option>
-                            <option value="3">Mirage</option>
-                            <option value="4">Train</option>
-                            <option value="5">Nuke</option>
-                            <option value="6">Overpass</option>
-                            <option value="7">Vertigo</option>
-                        </select><br>
-                    </div>
-
                     <label for="">Rifle favorito</label>
                     <div class="selects">
                         <select id="sel_rifle">
@@ -127,15 +99,14 @@
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
-        var mapaVar = sel_mapa.value;
-        var mapa2Var = sel_mapa2.value;
-        var rifleVar = sel_rifle.value
         var senhaVar = senha_input.value;
+        var rifleVar = sel_rifle.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || rifleVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert(`Você deixou de preencher algum campo!!`)
 
             finalizarAguardar();
             return false;
@@ -156,9 +127,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                mapaServer: mapaVar,
-                mapa2Server: mapa2Var,
                 rifleServer: rifleVar
+
             })
         }).then(function (resposta) {
 

@@ -7,7 +7,6 @@ comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
 create database Projeto_Individual;
-
 use Projeto_individual;
 
 
@@ -20,35 +19,25 @@ NomeArmamento varchar(45)
 create table usuario(
 idUsuario int primary key auto_increment,
 Nome varchar(45) not null,
-Email varchar(90) not null, 
-Senha varchar(45) not null,
+Email varchar(90) not null Unique, 
+Senha varchar(256) not null,
 constraint chkemail check (Email like '%@%'),
 fkArmamento int, foreign key (fkArmamento) references Armamento(idArmamento)
 );
 
-create table Mapa(
-idMapa int primary key auto_increment,
-NomeMapa varchar(45)
-);
 
-Create table MapaCadastro( 
-fkUsuario int, foreign key (fkUsuario) references Usuario(idUsuario),
-fkMapa int, foreign key (fkMapa) references Mapa(idMapa),
-primary key (fkUsuario, fkMapa)
-);
 
+Select * from armamento;
 select * from usuario;
-select * from mapaCadastro;
+
+select Armamento.*, count(fkArmamento) from usuario join armamento on idArmamento = fkArmamento;
 
 
-insert into Mapa values
-(1, 'Dust2'),
-(2, 'Inferno'),
-(3, 'Mirage'),
-(4, 'Train'),
-(5, 'Nuke'),
-(6, 'Overpass'),
-(7, 'Vertigo');
+
+insert into usuario values
+(null, 'Kaio', 'kaio4@gmail.com', '1234', 1);
+
+
 
 insert into armamento values
 (1, 'AK-47'),
@@ -57,7 +46,6 @@ insert into armamento values
 (4, 'AUG'),
 (5, 'AWP'),
 (6, 'SG553');
-
 
 /*
 comando para sql server - banco remoto - ambiente de produção

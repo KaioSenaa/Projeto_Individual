@@ -15,42 +15,40 @@
 <body>
     <div class="header">
         <div class="icone">
-            <a href="index.html">
-                <h1>CSGO - WIKI</h1>
-            </a>
+                <h1>INFO - GO</h1>
         </div>
     </div>
     <div class="container-cadastro">
         <div class="sombra-cadastro">
             <div class="container-cadastro2">
-                <form action="">
+                <form action="dialog">
 
 
                     <h2>Cadastro</h2>
 
                     <label for="">Nome</label>
                     <div class="inputs">
-                        <input type="text" placeholder="Nome" id="nome_input">
+                        <input type="text" placeholder="Nome" id="nome_input" required>
                     </div>
 
                     <label for="">Email</label>
                     <div class="inputs">
-                        <input type="text" placeholder="teste@gmail.com" id="email_input">
+                        <input type="text" placeholder="teste@gmail.com" id="email_input" required>
                     </div>
 
                     <label for="">Senha</label>
                     <div class="inputs">
-                        <input type="password" placeholder="**********" id="senha_input">
+                        <input type="password" placeholder="**********" id="senha_input" required>
                     </div>
 
                     <label for="">Confirmar senha</label>
                     <div class="inputs">
-                        <input type="password" placeholder="**********" id="confirmacao_senha_input">
+                        <input type="password" placeholder="**********" id="confirmacao_senha_input" required>
                     </div>
 
                     <label for="">Rifle favorito</label>
                     <div class="selects">
-                        <select id="sel_rifle">
+                        <select id="sel_rifle" required>
                             <option value="">Selecione um rifle</option>
                             <option value="1">AK-47</option>
                             <option value="2">M4A4</option>
@@ -62,7 +60,7 @@
                     </div>
 
                     <div class="btn">
-                        <button onclick="cadastrar()" id="">Cadastrar</button>
+                        <button onclick="cadastrar()" id="" type="button">Cadastrar</button>
                     </div>
                     <br><a href="Login.html">
                         <p>Já tem uma conta? Clique aqui</p>
@@ -102,12 +100,18 @@
         var senhaVar = senha_input.value;
         var rifleVar = sel_rifle.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    
+        if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro senhas diferentes)";
 
+            finalizarAguardar();
+            return false;
+        } 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || rifleVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             alert(`Você deixou de preencher algum campo!!`)
-
             finalizarAguardar();
             return false;
         }
@@ -140,8 +144,9 @@
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                    console.log('chegueiii')
+                    window.location = "./Login.html";
+                }, 2000)
 
                 limparFormulario();
                 finalizarAguardar();

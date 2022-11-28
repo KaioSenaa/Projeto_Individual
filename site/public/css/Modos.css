@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -88,4 +90,13 @@ align-items: center;
     justify-content: flex-start;
     margin: 2%;
 
+}
+
+h1{
+    font-family: 'Sono';
+}
+
+span{
+    font-family: 'Sono, sans-serif;';
+    font-size: 20px;
 }

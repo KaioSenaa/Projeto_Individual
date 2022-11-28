@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -92,3 +94,34 @@ body{
 }
     
 
+h2{
+    font-family: 'Sono';
+}
+
+p{
+    font-family: 'Sono, sans-serif;';
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.77);
+    height: 100px;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+
+  }
+  
+
+  .container-footer{
+    text-align: center;
+    align-items: center;
+  }
+
+  .container-footer h4{
+    padding: 5%;
+  }
+  
+  .footer .container-footer .version {
+    font-size: 12px;
+  }

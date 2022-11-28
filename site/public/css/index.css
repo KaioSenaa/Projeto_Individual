@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200&display=swap');
 
 * {
     padding: 0;
@@ -87,7 +87,7 @@ body {
 
 
 .banner{
-    padding: 10%;
+    padding: 5%;
     
     display: flex;
     flex-direction: center;
@@ -103,17 +103,24 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(50, 50, 50, 0.77);
+    border-radius: 3vh;
+    background-color: rgba(255, 255, 255, 0.35);
 }
 
 .container h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Sono';
+}
+
+p{
+    font-family: 'Sono, sans-serif;';
+    font-size: 20px;
 }
 
 
 
 .container-card{
     display: flex;
+    padding: 5%;
     justify-content: space-around;
 }
 
@@ -156,3 +163,27 @@ body {
 .descricao-card{
     text-align: center;
 }
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.77);
+    height: 100px;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+
+  }
+  
+
+  .container-footer{
+    text-align: center;
+    align-items: center;
+  }
+
+  .container-footer h4{
+    padding: 5%;
+  }
+  
+  .footer .container-footer .version {
+    font-size: 12px;
+  }

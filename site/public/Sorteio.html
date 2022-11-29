@@ -85,8 +85,6 @@
         if(skin == ""){
             alert(`Por favor, digite o nome de uma skin`)
         }
-        for (let index = 0; index < skins.length && skin != ""; index++) {
-            const skinss = skins[index];
             if (cx_baixa == skins[0]) {
                 frase_sorteio.innerHTML = `${frase}<br>`
                 img_sorteio.innerHTML = `<img src="img/PngItem_518850.png" alt="">`
@@ -115,5 +113,5 @@
                 frase_sorteio.innerHTML = `Não foi possível achar esta skin!`
             }
         }
-    }
+    
 </script>

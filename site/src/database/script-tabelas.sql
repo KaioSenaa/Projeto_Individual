@@ -9,11 +9,17 @@ comandos para mysql - banco local - ambiente de desenvolvimento
 create database Projeto_Individual;
 use Projeto_individual;
 
+create table Skin(
+idSkin int primary key auto_increment,
+NomeSkin varchar(60)
+);
 
 create table Armamento(
 idArmamento int primary key auto_increment,
-NomeArmamento varchar(45)
+NomeArmamento varchar(45),
+fkSkin int
 );
+
 
 
 create table usuario(
@@ -28,24 +34,33 @@ fkArmamento int, foreign key (fkArmamento) references Armamento(idArmamento)
 
 
 Select * from armamento;
+select * from skin;
 select * from usuario;
 
 select Armamento.*, count(fkArmamento) from usuario join armamento on idArmamento = fkArmamento;
 
-
-
-insert into usuario values
-(null, 'Kaio', 'kaio4@gmail.com', '1234', 1);
-
+insert into Skin values
+(null, 'Case Hardened'),
+(null, 'Howl'),
+(null, 'Hyper Beast'),
+(null, 'Akihabara Accept'),
+(null, 'Dragon Lore'),
+(null, 'Integrale');
 
 
 insert into armamento values
-(1, 'AK-47'),
-(2, 'M4A4'),
-(3, 'M4A1-S'),
-(4, 'AUG'),
-(5, 'AWP'),
-(6, 'SG553');
+(1, 'AK-47',1 ),
+(2, 'M4A4',2),
+(3, 'M4A1-S',3),
+(4, 'AUG',4),
+(5, 'AWP',5),
+(6, 'SG553',6);
+
+
+
+insert into usuario values
+(null, 'Kaio', 'kaio@gmail.com', '1234', 1);
+
 
 /*
 comando para sql server - banco remoto - ambiente de produção
